@@ -1,27 +1,21 @@
-# NgStorybookDemo
+# Reproduction of assets issue in storybook v7 with Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+This is simplest example possible, containing:
+1. a basic Angular app created with `ng new my-app`
+2. storybook init on top of it `npx storybook@latest init` (latest was 7.5.0 ATMOW)
+
+Angular app contains only an `<img />` tag loading an image from `assets`.
+
+## Prerequisites
+
+`npm install`
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To run Angular server - `npm start`
 
-## Code scaffolding
+To run storybook - `npm run storybook`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## The problem
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The image is not loaded in storybook server (404)
